@@ -20,16 +20,21 @@ const Books = () => {
     ])
     return <div>
         <h1>Lama Book Shop</h1>
-    <div className="books">
+    <div className="books" key={book.id}>
         {books.map(book=>(
             <div className="book">
                 {book.cover && <img src={book.cover} alt="" />}
                 <h2>{book.title}</h2>
                 <p>{book.desc}</p>
                 <span>{book.price}</span>
+                <button className="delete">Delete</button>
+                <button className="update">update</button>
             </div>
         ))}
     </div>
+    <button>
+        <link> to="/add" Add new Book </link>
+        </button>
         </div>
 };
 export default Books
